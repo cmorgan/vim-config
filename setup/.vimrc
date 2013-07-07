@@ -219,7 +219,6 @@ map <Leader>rx :VimuxClosePanes<CR>
 
 " Close vim tmux runner opened by VimuxRunCommand
 map <Leader>rq :VimuxCloseRunner<CR> " ----------- /Vimux
- 
 
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set nobackup
@@ -240,3 +239,5 @@ set undolevels=1000      " use many muchos levels of undo
 "set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 let g:Powerline_colorscheme='solarized256_dark'
 "autocmd FileType python compiler pylint
+" treat shell as login shell
+set shellcmdflag=-ic

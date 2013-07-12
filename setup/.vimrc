@@ -13,13 +13,14 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tmhedberg/SimpylFold'
 Bundle 'nvie/vim-flake8'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'hdima/python-syntax'
+Bundle 'nvie/vim-rst-tables'
 
 let g:SimpylFold_docstring_preview = 1
 
@@ -90,3 +91,18 @@ set background=dark
 "let g:solarized_termcolors=256
 colorscheme solarized
 
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+        \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+            \ }
+
+
+" Toggle paste mode on/off with F2 key
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode

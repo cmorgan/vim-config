@@ -13,7 +13,7 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tmhedberg/SimpylFold'
 Bundle 'nvie/vim-flake8'
@@ -21,6 +21,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'hdima/python-syntax'
 Bundle 'nvie/vim-rst-tables'
+Bundle 'Rykka/riv.vim'
 
 let g:SimpylFold_docstring_preview = 1
 
@@ -73,16 +74,12 @@ set incsearch
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set nobackup
 set noswapfile
-set list
+"set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 
-" Define rst fles to be highlighted as rst
-" rst syntax from: http://www.vim.org/scripts/script.php?script_id=973
-" also rst modules: http://www.vim.org/scripts/script.php?script_id=1334
-autocmd BufRead *.rst set syntax=rest
 se t_Co=256
 "let g:solarized_termcolors=16
 syntax enable
@@ -100,7 +97,6 @@ let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
         \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
             \ }
-
 
 " Toggle paste mode on/off with F2 key
 nnoremap <F2> :set invpaste paste?<CR>

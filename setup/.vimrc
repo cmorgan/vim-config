@@ -31,6 +31,8 @@ nnoremap <silent><C-c> :tabnext<CR>
 nnoremap <silent><C-e> :tabnew<CR>
 nnoremap <silent><C-r> :tabclose<CR>
 
+nmap <silent> ,/ :nohlsearch<CR>
+
 " Set region to British English
 set spelllang=en_gb
 
@@ -105,3 +107,14 @@ set pastetoggle=<F2>
 set showmode
 
 filetype indent plugin on
+" treat shell as login shell
+set shellcmdflag=-ic
+
+set history=1000         " remember more commands and search history
+set undolevels=1000      " use many muchos levels of undo
+
+" Toggle open/close fold with f/F/^F
+nnoremap f za
+nnoremap F zR
+nnoremap <C-f> zM
+set backspace=2 " make backspace work like most other apps

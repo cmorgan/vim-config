@@ -102,3 +102,5 @@ let g:ctrlp_prompt_mappings = {
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
+
+filetype indent plugin on

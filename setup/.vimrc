@@ -22,6 +22,7 @@ Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'hdima/python-syntax'
 Bundle 'nvie/vim-rst-tables'
 Bundle 'Rykka/riv.vim'
+Bundle 'tpope/vim-commentary'
 
 let g:SimpylFold_docstring_preview = 1
 

@@ -16,15 +16,20 @@ Bundle 'gmarik/vundle'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tmhedberg/SimpylFold'
-Bundle 'nvie/vim-flake8'
+"Bundle 'nvie/vim-flake8'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'hdima/python-syntax'
 Bundle 'nvie/vim-rst-tables'
 Bundle 'Rykka/riv.vim'
 Bundle 'tpope/vim-commentary'
+"Bundle 'klen/python-mode'
 
 let g:SimpylFold_docstring_preview = 1
+let g:EasyMotion_leader_key = '<Leader>'
+" Toggle spell checking on and off with `,s`
+let mapleader = ","
+nmap <silent> <leader>s :set spell!<CR>
 
 nnoremap <silent><C-x> :tabprevious<CR>
 nnoremap <silent><C-c> :tabnext<CR>
@@ -51,12 +56,20 @@ set softtabstop=4
 " set tabs for html
 filetype on
 filetype plugin on
+filetype indent plugin on
 "au BufNewFile,BufRead *.html set shiftwidth=2
 au BufNewFile,BufRead *.html set softtabstop=2
 au BufNewFile,BufRead *.html set tabstop=2
 au BufNewFile,BufRead *.html set shiftwidth=2
 au BufNewFile,BufRead *.html set textwidth=0
 au BufNewFile,BufRead *.tmpl set textwidth=0
+
+" when indenting in visual mode keep the block highlighted
+vnoremap < <gv
+vnoremap > >gv
+
+" all my .tmpl files ARE html
+au BufNewFile,BufRead *.tmpl :set ft=html
 
 " change dir to the openec file dir
 if exists('+autochdir')
@@ -106,7 +119,6 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-filetype indent plugin on
 " treat shell as login shell
 set shellcmdflag=-ic
 
@@ -118,3 +130,14 @@ nnoremap f za
 nnoremap F zR
 nnoremap <C-f> zM
 set backspace=2 " make backspace work like most other apps
+
+" Turn on line numbers:
+"set number
+" Toggle line numbers and fold column for easy copying:
+nnoremap <F3> :set number!<CR>:set foldcolumn=0<CR>
+
+"display the filename at the bottom of the file
+set ls=2
+set nonumber
+" highligh search term
+set hlsearch

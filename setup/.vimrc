@@ -141,3 +141,6 @@ set ls=2
 set nonumber
 " highligh search term
 set hlsearch
+
+" Execute file being edited with <Shift> + e:
+map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>

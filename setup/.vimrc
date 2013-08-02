@@ -13,14 +13,14 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required! 
 Bundle 'gmarik/vundle'
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tmhedberg/SimpylFold'
 "Bundle 'nvie/vim-flake8'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'hynek/vim-python-pep8-indent'
 Bundle 'hdima/python-syntax'
-Bundle 'nvie/vim-rst-tables'
+"Bundle 'nvie/vim-rst-tables'
 Bundle 'Rykka/riv.vim'
 Bundle 'tpope/vim-commentary'
 "Bundle 'klen/python-mode'
@@ -144,3 +144,8 @@ set hlsearch
 
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
+if exists('+colorcolumn')
+  set colorcolumn=80
+else
+  au BufWinEnter * let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
+endif
